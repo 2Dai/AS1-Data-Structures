@@ -1,0 +1,43 @@
+************ TH TABLE ************
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 32.82      0.18     0.18                             add_data_th
+ 18.23      0.28     0.10                             add_data_lca
+ 12.76      0.35     0.07                             data_linked_lca
+  9.12      0.40     0.05                             data_linked_th
+  7.29      0.44     0.04                             hash_fonction1
+  7.29      0.48     0.04                             used_key_lca
+  5.47      0.51     0.03                             perf_add
+  3.65      0.53     0.02                             used_key_th
+  1.82      0.54     0.01                             destroy_th
+  1.82      0.55     0.01                             perf_data_linked
+
+
+************ LCA ITERATIVE *******
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 29.54      0.05     0.05                             used_key_lca
+ 23.63      0.09     0.04                             add_data_lca
+ 23.63      0.13     0.04                             data_linked_lca
+ 11.82      0.15     0.02                             perf_add
+  5.91      0.16     0.01                             empty_lca
+  5.91      0.17     0.01                             perf_data_linked
+
+*********** LCA RECURSIVE *******
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 44.66      0.12     0.12                             used_key_lca
+ 26.05      0.19     0.07                             add_data_lca
+ 13.02      0.23     0.04                             data_linked_lca
+  7.44      0.25     0.02                             perf_add
+  7.44      0.27     0.02                             perf_data_linked
+  1.86      0.27     0.01                             print_lca

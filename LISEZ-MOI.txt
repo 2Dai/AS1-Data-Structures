@@ -1,0 +1,90 @@
+Auteur : Iffrig-Bourfa Dylan
+Compte rendu du mini projet.
+---------------------------------------------------------------------------------------------
+
+*************************
+Informations préalables :
+*************************
+
+- Les fonctions sont en anglais (noms de variables/fonctions plus courtes et plus explicites),
+- L'ensemble des informations décrivant les fonctions se trouvent dans les "*.h",
+- Un commentaire est ajouté aux lignes de codes pouvant preter à confusion, le reste du code
+reste assez simple et il me semblait pas pertinent de commenter chaque lignes de code
+(j'initialise ma variable, j'affecte une valeur à ma variable ...)
+
+- Convention d'écriture :
+    -Les noms de variables sont de la forme : maVaribleTest,
+    -Les noms de fonctions sont de la forme : ma_fonction_test,
+    -Les alias de types crées sont de la forme : alias_t,
+
+---------------------------------------------------------------------------------------------
+
+*************************
+1er Rendu du 08/01/2016 :
+*************************
+
+Regle du Makefile : 'test-lca' fonctionnel,
+	-Test seatest de la lca : ok,
+	-Implementation de la lca : ok,
+	-Création d'une fonction qui permet de génerer des lca pour creer des jeux de test,
+
+Regle du Makefile : 'th' fonctionnel, 
+	-Début de l'implémentation des tables th,
+	-Désordre volontaire des fonctions dans le but de tester l'implémentation en temps reél,
+	-Affichage de la th ok,
+
+Reste à faire 
+	-mise à jours des prototypes des fonctions (commenter d'avantage),
+	-finalisation de l'interpreteur (déjà commencé),
+	-tests de performances,
+	-finalisation de l'implémentation th déjà effectué au brouillon,
+	
+J'ai repris toute les fonctions que j'avais effectué pendant les vacances (qui étaient pas 
+correct du à une ambiguité du sujet entre (nettoyer lca et detruire lca)) ce qui explique 
+le "faible" avancement dans le th (j'ai préféré debbuger completement la lca avant de me
+lancer dans la th qui dépend de la lca.)
+
+--------------------------------------------------------------------------------
+
+***************************
+Rendu final du 25/01/2016 :
+***************************
+
+
+Regles du Makefile : 'clean' et 'all' fonctionnels,
+    - l'Ensemble des executables sont fonctionnels 
+    (avec vérifications de la gestion de mémoire sur Valgrind sauf pour les test)
+    - 2 Warnings présents : ne gene pas le fonctionnement (ils sont issus du 
+    module recursif de la lca, les programmes sont exactes algorithmiquement mais
+    le compilateur ne le sais pas et reclame des return partout)
+    - testeur.sh fonctionne
+
+    - Les tests de performances ont été réalisés avec gprof sur mon ordinateur
+    personnel (j'ai mis les résultats finaux dans le dossier performance.txt)
+    pour verifier l'exactitude des tests il est possible d'utiliser la regle
+    performance-lca-recursive/iterative du Makefile.
+
+Compte rendu rapide :
+    Progression dans le projet:
+        - Dans un premier temps j'ai effectué comme demandé la spécification de toutes les
+        fonctions lca et th.
+        - J'ai effectué l'implémentation des tests
+        - J'ai implémenté lca en itératif puis en recursif
+        - J'ai implémenté les fonctions de hachages puis th
+        - j'ai implémenté l'interpreteur de sda
+        - Pour finir j'ai implémenté les tests de performances
+
+    Conclusion:
+        - On remarque que la version itérative est plus performante (en temps) que
+        la version recursive pour des grands nombres d'itérations
+        (de plus la version recursive est sensible à des potentiels "stack overflow")
+        On favorisera donc la version itérative pour les nombres importants de passages
+        par nos sous programmes.
+
+        - De façon analogue on pourrait comparer les temps d'executions pour des faibles
+        nombres de passages par les sous programmes et conclure sur la meilleure version.
+
+        - On remarque sans surprise que th est plus gourmand en temps d'execution que les
+        lca (logique th c'est un ensemble de lca et elle utilise les SP lca)
+    
+
